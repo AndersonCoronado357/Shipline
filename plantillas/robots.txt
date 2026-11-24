@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /register
+Disallow: /forgot
+Disallow: /reset
+Disallow: /auth/
+
+Sitemap: __ORIGIN__/sitemap.xml

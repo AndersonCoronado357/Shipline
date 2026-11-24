@@ -1,0 +1,27 @@
+# Shipline
+
+> Shipline es una app web para llevar tus proyectos de la idea a publicados. Cada proyecto tiene nombre, idea, color, enlace y repositorio, y avanza por cuatro estaciones: idea, en desarrollo, terminado y publicado. Es una app de acmsy.
+
+## Qué hace
+
+- Anota cada proyecto con su nombre, su idea y un color propio.
+- Lo ubica en uno de cuatro estados: idea, en desarrollo, terminado o publicado.
+- Mueve cada proyecto de estación desde la lista, con opción de deshacer.
+- Guarda el enlace del sitio publicado y el del repositorio.
+- Busca y filtra los proyectos por estado.
+- Tiene tema claro y oscuro, y se instala como app en el celular.
+
+## Para quién es
+
+Para quien desarrolla varios proyectos a la vez (personales, de estudio o de clientes) y quiere ver en un solo lugar en qué va cada uno, sin una herramienta de gestión pesada.
+
+## Cómo empezar
+
+1. Entra en __ORIGIN__/ con Google o con tu correo.
+2. Crea tu primer proyecto con «Nuevo proyecto».
+3. Ábrelo o usa «Mover» en su fila para cambiarlo de estación.
+
+## Dirección
+
+- App: __ORIGIN__/
+- Hecha por acmsy: https://acmsy.com
