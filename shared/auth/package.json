@@ -1,0 +1,11 @@
+{
+  "name": "@acmsy/auth",
+  "version": "1.0.0",
+  "description": "Modulo de login reutilizable de acmsy (Google + usuario/contrasena, recuperacion por correo).",
+  "main": "index.js",
+  "private": true,
+  "peerDependencies": {
+    "express": ">=4"
+  },
+  "comment": "Instala SOLO el driver de tu base de datos: 'pg' para PostgreSQL o 'mysql2' para MySQL. El correo y Google no necesitan dependencias (usan fetch)."
+}
