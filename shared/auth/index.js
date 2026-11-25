@@ -173,18 +173,25 @@ function createAuth(opts = {}) {
   }));
 
   // ---------- Entrar con Google ----------
+  // Retorno de Google. En producción (OAUTH_RELAY) Google vuelve a acmsy.com/auth/google/callback, que ya
+  // está autorizado, y la landing reenvía a <sub>.acmsy.com/auth/callback según el final del state
+  // ("~<sub>"). Así no hay que registrar una URL nueva por app. En local, vuelve directo aquí.
+  const relevo = (process.env.OAUTH_RELAY || '').trim();
+  const retornoGoogle = () => relevo || full('/auth/google/callback');
+  const sufijoEstado = relevo && subdomain ? '~' + subdomain : '';
+
   router.get(u('/auth/google'), wrap(async (req, res) => {
     if (!googleEnabled) return res.redirect(u('/login'));
-    const state = sec.randomToken(16);
+    const state = sec.randomToken(16) + sufijoEstado;
     res.cookie('acmsy_oauth', sec.sign(state), cookieOpts({ maxAge: 1000 * 60 * 10 }));
-    res.redirect(google.authUrl({ clientId: process.env.GOOGLE_CLIENT_ID, redirectUri: full('/auth/google/callback'), state }));
+    res.redirect(google.authUrl({ clientId: process.env.GOOGLE_CLIENT_ID, redirectUri: retornoGoogle(), state }));
   }));
-  router.get(u('/auth/google/callback'), wrap(async (req, res) => {
+  router.get([u('/auth/google/callback'), u('/auth/callback')], wrap(async (req, res) => {
     await ensureInit();
     const c = parseCookies(req);
     const expected = c.acmsy_oauth && sec.unsign(c.acmsy_oauth);
     if (!expected || expected !== req.query.state) return res.redirect(u('/login'));
-    const tokens = await google.exchangeCode({ code: String(req.query.code || ''), clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET, redirectUri: full('/auth/google/callback') });
+    const tokens = await google.exchangeCode({ code: String(req.query.code || ''), clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET, redirectUri: retornoGoogle() });
     const prof = await google.fetchProfile(tokens.access_token);
     if (!prof.email) return res.redirect(u('/login'));
     let user = await db.findByEmail(prof.email);
