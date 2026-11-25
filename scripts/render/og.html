@@ -1,0 +1,32 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=block">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;overflow:hidden;background:#C9F7EC;color:#0E3533;font-family:Nunito,sans-serif}
+.sol{position:absolute;right:150px;top:70px;width:120px;height:120px;border-radius:50%;background:#FFE3A1}
+.nube{position:absolute;height:48px;border-radius:999px;background:#fff}
+.nube::before,.nube::after{content:'';position:absolute;border-radius:50%;background:#fff}
+.n1{left:620px;top:120px;width:150px}.n1::before{width:64px;height:64px;left:26px;top:-32px}.n1::after{width:50px;height:50px;left:74px;top:-20px}
+.n2{left:900px;top:240px;width:110px;height:36px}.n2::before{width:46px;height:46px;left:18px;top:-23px}.n2::after{width:36px;height:36px;left:56px;top:-15px}
+.mar{position:absolute;left:0;bottom:0;width:1200px;height:230px}
+.barco{position:absolute;left:760px;bottom:150px;width:190px;transform:rotate(-4deg)}
+.marca{position:absolute;left:80px;top:96px}
+.marca svg{width:108px;height:108px}
+h1{font-weight:900;font-size:96px;line-height:1;letter-spacing:-.02em;margin-top:24px}
+p{font-weight:800;font-size:34px;color:#2F5F5A;margin-top:12px}
+.de{position:absolute;left:80px;bottom:44px;display:flex;align-items:center;gap:10px;font-size:22px;font-weight:700;color:#E8FFF8;z-index:2}
+.de img{width:28px;height:28px}.de b{font-weight:900}
+</style></head><body>
+<i class="sol"></i><i class="nube n1"></i><i class="nube n2"></i>
+<svg class="mar" viewBox="0 0 1200 230" preserveAspectRatio="none">
+  <path d="M0 70C140 40 260 40 400 66S660 100 800 68 1060 36 1200 60V230H0Z" fill="#7FEFD3"/>
+  <path d="M0 120C150 92 280 94 420 118S690 148 840 116 1080 92 1200 110V230H0Z" fill="#3FE3BD"/>
+  <path d="M0 170C160 148 290 152 440 170S720 192 870 168 1090 150 1200 162V230H0Z" fill="#17C9A0"/>
+</svg>
+<svg class="barco" viewBox="0 0 160 110"><path d="M84 4L84 62H30Z" fill="#fff"/><path d="M84 14L84 62H124Z" fill="#9EEFD9"/><path d="M84 2V64" stroke="#0E3533" stroke-width="4" stroke-linecap="round"/><path d="M6 64H154L130 100H30Z" fill="#0E3533"/><path d="M22 76H142" stroke="#20E8B7" stroke-width="5" stroke-linecap="round"/></svg>
+<div class="marca">
+  <svg viewBox="0 0 512 512"><rect width="512" height="512" rx="114" fill="#20E8B7"/><g transform="translate(6 -6)"><path d="M350 140H222A58 58 0 0 0 222 256H290A58 58 0 0 1 290 372H162" fill="none" stroke="#022628" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/><circle cx="350" cy="140" r="38" fill="#022628"/><circle cx="162" cy="372" r="40" fill="#20E8B7" stroke="#022628" stroke-width="26"/></g></svg>
+  <h1>Shipline</h1>
+  <p>Lleva tus proyectos a buen puerto.</p>
+</div>
+</body></html>
