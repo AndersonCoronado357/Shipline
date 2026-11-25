@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100vw;height:100vh;overflow:hidden;background:transparent}
+body{display:grid;place-items:center}
+/* maskable: a sangre con el mismo fondo oscuro del manifiesto (background_color #080B0C), así la
+   pantalla de inicio de Android muestra solo el logo, sin recuadro. El logo va en la zona segura. */
+body.maskable{background:#080B0C}
+body.apple{background:#20E8B7}
+svg{display:block}
+body.any svg,body.apple svg{width:100vw;height:100vh}
+body.maskable svg{width:58vw;height:58vw}
+</style></head><body><script>
+const m=location.hash.slice(1)||'any';document.body.className=m;
+const fondo=m==='apple'?'':'<rect width="512" height="512" rx="114" fill="#20E8B7"/>';
+document.body.innerHTML='<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">'+fondo+'<g transform="translate(6 -6)"><path d="M350 140H222A58 58 0 0 0 222 256H290A58 58 0 0 1 290 372H162" fill="none" stroke="#022628" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/><circle cx="350" cy="140" r="38" fill="#022628"/><circle cx="162" cy="372" r="40" fill="#20E8B7" stroke="#022628" stroke-width="26"/></g></svg>';
+</script></body></html>
