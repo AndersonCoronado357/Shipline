@@ -67,6 +67,7 @@ module.exports = function crearVistas({ origin, version }) {
 <meta name="description" content="${esc(DESCRIPCION)}">
 <link rel="canonical" href="${O}/">
 <meta name="robots" content="${indexar ? 'index, follow, max-image-preview:large, max-snippet:-1' : 'noindex, follow'}">
+<meta name="google-site-verification" content="kQccDg7SPoW-KuDF8XOWxtDYuiBCJzRwH06gh-D-16E">
 <meta name="application-name" content="Shipline">
 <meta name="apple-mobile-web-app-title" content="Shipline">
 <meta name="mobile-web-app-capable" content="yes">
