@@ -1,83 +1,222 @@
+<div align="center">
+
+<img src="public/icons/favicon.svg" alt="Shipline" width="84" />
+
 # Shipline
 
-Lleva tus proyectos de la idea a publicados. Cada proyecto tiene nombre, idea, color, enlace y
-repositorio, y avanza por cuatro estaciones: **idea**, **en desarrollo**, **terminado** y
-**publicado**. Una app de [acmsy](https://acmsy.com), pensada para vivir en `shipline.acmsy.com`.
+**Lleva tus proyectos a buen puerto.**
 
-## Cómo funciona
+Anota cada proyecto con su idea y su color, y llévalo por cuatro estaciones hasta publicarlo:<br />
+idea, en desarrollo, terminado y publicado. Funciona en el celular y en la PC, y se instala como app.
 
-- **Tres pantallas de cuenta con su escena:** entrar (barco en altamar), crear cuenta (barco amarrado al
-  muelle) y recuperar (botella con mensaje). Se pasa de una a otra sin recargar con la marea de
-  `public/marea.js`: sube el agua con el barco en la cresta, se cambia la pantalla y baja. El mar y el
-  barco que navega sobre la ola están en `public/escena.js`.
-- **Portada = login.** `/` sin sesión muestra la portada (la que ven los buscadores) con el
-  formulario para entrar; con sesión, la misma dirección abre la app.
-- **Lista por estación.** Los proyectos se agrupan en idea, en desarrollo, terminado y publicado;
-  cada fila muestra solo el color, el nombre y la idea. Al pasar el ratón aparecen el sitio, el
-  repositorio y «Mover», que cambia la estación con opción de deshacer.
-- **Filtro por estación** arriba, con el conteo de cada una, y búsqueda por nombre o idea
-  (atajos: «/» para buscar y «N» para un proyecto nuevo).
-- **Panel lateral** para crear y editar (en el celular sube desde abajo); se cierra con la X. Para
-  eliminar se mantiene presionado el botón y queda un aviso con «Deshacer».
-- Tema claro y oscuro, instalable como app (manifiesto + service worker).
+[**shipline.acmsy.com**](https://shipline.acmsy.com)
 
-## Arrancar en local
+<br />
+
+![Node](https://img.shields.io/badge/Node-22-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4-000000?style=flat-square&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-instalable-20E8B7?style=flat-square)
+![Docker](https://img.shields.io/badge/Docker-listo-2496ED?style=flat-square&logo=docker&logoColor=white)
+
+<br />
+
+<img src="public/og.png" alt="Shipline: tus proyectos de la idea a publicados" width="100%" />
+
+</div>
+
+<br />
+
+## Qué hace
+
+| | |
+|---|---|
+| **Cuatro estaciones** | Cada proyecto está en idea, en desarrollo, terminado o publicado. La lista los agrupa por estación y la bienvenida te dice cuántos llevas en desarrollo y cuántos publicados. |
+| **Mover desde la lista** | Al pasar el mouse por una fila aparecen el sitio y el repositorio (si los tiene) y «Mover», un menú con las cuatro estaciones. Cada cambio se deshace desde el aviso, y al llegar a publicado lo anuncia: «Confetti llegó a Publicado». |
+| **La ficha del proyecto** | Nombre, idea, estación, color, sitio publicado y repositorio, en un panel lateral que en el celular sube desde abajo. |
+| **Color e insignia** | Siete colores o uno propio. La insignia lleva la inicial y elige tinta o blanco según el contraste. |
+| **Buscar y filtrar** | Búsqueda por nombre o idea, y filtro por estación con el conteo de cada una. Atajos: «/» busca y «N» crea un proyecto. |
+| **Eliminar sin sustos** | El botón se mantiene presionado mientras la barra se llena; si lo sueltas antes no pasa nada, y el aviso deja deshacerlo. |
+| **Tu cuenta** | Entra con Google o con correo y contraseña. La contraseña se recupera con un enlace por correo. |
+| **Oscuro por defecto** | El tema claro es opcional y se recuerda en una cookie. |
+
+<br />
+
+## Capturas
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/capturas/proyectos.png" alt="Proyectos" /></td>
+    <td width="50%"><img src="docs/capturas/editar.png" alt="Editar un proyecto" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Proyectos</b> · agrupados por estación, con el barco en la bienvenida</sub></td>
+    <td align="center"><sub><b>Editar</b> · nombre, idea, estación, color, sitio y repositorio</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/capturas/mover.png" alt="Mover un proyecto" /></td>
+    <td width="50%"><img src="docs/capturas/publicados.png" alt="Filtro de publicados" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Mover</b> · las cuatro estaciones salen de la misma fila</sub></td>
+    <td align="center"><sub><b>Publicados</b> · el filtro se desliza hasta la estación elegida</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/capturas/claro.png" alt="Tema claro" /></td>
+    <td width="50%"><img src="docs/capturas/entrar.png" alt="Entrar" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Tema claro</b> · de día salen el sol y las gaviotas</sub></td>
+    <td align="center"><sub><b>Entrar</b> · el barco navega en altamar</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/capturas/crear-cuenta.png" alt="Crear cuenta" /></td>
+    <td width="50%"><img src="docs/capturas/recuperar.png" alt="Recuperar la contraseña" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Crear cuenta</b> · el mar cambia de lado y el barco espera en el muelle</sub></td>
+    <td align="center"><sub><b>Recuperar</b> · una botella con el mensaje flota a la deriva</sub></td>
+  </tr>
+</table>
+
+<div align="center">
+  <img src="docs/capturas/movil-entrar.png" alt="Entrar en el celular" width="30%" />
+  &nbsp;
+  <img src="docs/capturas/movil-proyectos.png" alt="Proyectos en el celular" width="30%" />
+  &nbsp;
+  <img src="docs/capturas/movil-editar.png" alt="Editar en el celular" width="30%" />
+  <br />
+  <sub>En el celular todo pasa a una columna y «Nuevo proyecto» queda a mano, abajo.</sub>
+</div>
+
+<br />
+
+## Diseño
+
+Shipline gira alrededor de una idea: **cada proyecto es un barco que zarpa hacia publicado**. El mar
+decide el movimiento, no al revés.
+
+- **El barco navega de verdad.** Su altura y su inclinación salen de la misma curva que dibuja la ola, así que sube, baja y cabecea con ella, y deja una estela de espuma. Nada flota en un punto fijo.
+- **Cada pantalla de cuenta tiene su escena y su distribución.** Entrar: el mar a un lado y el barco en altamar. Crear cuenta: el formulario cambia de lado y el barco espera amarrado al muelle. Recuperar: el mar a toda la pantalla y una botella con un mensaje.
+- **La marea cambia de pantalla.** Entre entrar, crear cuenta y recuperar no se recarga la página: sube la marea en tres capas, el barco surfea la cresta (o la botella cae y salpica), la pantalla cambia debajo del agua y la marea baja descubriéndola.
+- **Noche y día.** De noche, luna creciente, estrellas que titilan y alguna estrella fugaz; de día, sol, nubes y gaviotas.
+- **La lista se reordena sola** al mover un proyecto, y los conteos ruedan hasta su nuevo valor.
+- **Oscuro casi negro** (`#080B0C`) con un solo acento aguamarina (`#20E8B7`).
+- **Plano y limpio.** Sin bordes, sin sombras y sin anillos: la jerarquía sale del fondo, del espacio y de la tipografía.
+- **Hover sin mover nada.** Al pasar el mouse solo cambia el color; nada crece ni se desplaza.
+- **Todo a pantalla completa**, sin scroll general en la PC: la lista hace scroll por dentro, con un desvanecido que avisa que hay más.
+- **Tipografía:** Nunito, redondeada, para títulos y texto.
+
+<br />
+
+## Stack
+
+| Capa | Tecnología |
+|---|---|
+| Servidor | **Node 22** con **Express 4** |
+| Interfaz | HTML armado en el servidor, CSS y **JavaScript** sin frameworks ni compilación |
+| Animación | CSS, SVG, Web Animations API y View Transitions |
+| Datos | **PostgreSQL** con `pg`; las tablas se crean solas al primer uso |
+| Sesión | Cookie firmada con HMAC, CSRF de doble envío y contraseñas con `scrypt`; Google OAuth |
+| Correo | Resend, para recuperar la contraseña |
+| PWA | Manifiesto y service worker propios |
+| Despliegue | Docker sobre acmsy, detrás de Cloudflare |
+
+<br />
+
+## Estructura
+
+```
+Shipline/
+  server.js          Portada, app, API /api/proyectos, archivos de SEO y cabeceras de caché
+  views.js           HTML de la portada, las pantallas de cuenta y la app, con sus metadatos
+  proyectos.js       Tabla de proyectos y validación
+  shared/
+    auth/            Sesión, Google, registro y recuperación de contraseña
+    mailer/          Envío de correos con Resend
+  plantillas/        robots.txt, sitemap.xml, llms.txt, manifiesto y sw.js
+  public/
+    app.css          Tokens, escena, pantallas de cuenta y app
+    app.js           Lista, filtros, menú Mover, panel, avisos y tema
+    escena.js        El barco y la botella sobre la ola
+    marea.js         La marea entre entrar, crear cuenta y recuperar
+    icons/           Logo e iconos de la app
+    og.png           Imagen para compartir
+  scripts/
+    sembrar.js       Carga los proyectos iniciales en una cuenta
+    render/          HTML de los iconos y de og.png
+  docs/capturas/     Las capturas de este README
+```
+
+<br />
+
+## Cómo correr en local
+
+Necesitas **Node 22+** y **PostgreSQL**.
 
 ```bash
 npm install
-cp .env.example .env   # y completa DATABASE_URL y SESSION_SECRET
-npm start              # http://localhost:3000 (o el PORT del .env)
 ```
 
-Necesita PostgreSQL. Las tablas (`auth_users`, `auth_tokens`, `auth_logins` y `proyectos`) se
-crean solas al primer uso.
+Copia `.env.example` como `.env` y completa `DATABASE_URL` y `SESSION_SECRET`. Luego:
 
-Para cargar los proyectos iniciales en una cuenta:
+```bash
+npm run dev
+```
+
+Abre <http://localhost:3000> y crea una cuenta.
+
+Opcional: cargar los proyectos iniciales en una cuenta. Si no existe, se crea sin contraseña y se entra
+con Google con ese correo o eligiendo una desde «¿Olvidaste tu contraseña?».
 
 ```bash
 npm run sembrar -- tu@correo.com
 ```
 
-Si la cuenta no existe se crea sin contraseña: se entra con Google (mismo correo) o eligiendo
-contraseña desde «Olvidé mi contraseña». No duplica proyectos que ya estén.
+<br />
 
-## Estructura
+## Variables de entorno
 
-| Archivo | Qué hace |
+| Variable | Para qué |
 |---|---|
-| `server.js` | Express: portada, app, API `/api/proyectos`, SEO y cabeceras de caché |
-| `views.js` | HTML de la portada, las pantallas de cuenta y la app (con todos los metadatos) |
-| `proyectos.js` | Tabla `proyectos` y validación |
-| `shared/auth`, `shared/mailer` | Copia del login y el correo de acmsy (ver abajo) |
-| `plantillas/` | `robots.txt`, `sitemap.xml`, `llms.txt`, manifiesto y `sw.js` (con la dirección pública) |
-| `public/` | `app.css`, `app.js`, iconos e imagen para compartir |
-| `scripts/sembrar.js` | Carga los proyectos iniciales en una cuenta |
-| `scripts/render/` | HTML de los iconos y de `og.png` (se renderizan con Edge sin interfaz) |
+| `DATABASE_URL` | Conexión a PostgreSQL |
+| `SESSION_SECRET` | Firma de la cookie de sesión: una cadena larga y aleatoria |
+| `APP_URL` | URL pública de la app, para los enlaces del correo y Google |
+| `PORT` | Puerto del servidor (3000 por defecto) |
+| `GOOGLE_CLIENT_ID` · `GOOGLE_CLIENT_SECRET` | Entrar con Google (opcional) |
+| `OAUTH_RELAY` | Dirección de retorno compartida de Google en producción (opcional) |
+| `RESEND_API_KEY` · `MAIL_FROM` · `MAIL_FROM_NAME` | Correo de recuperación por Resend |
 
-## API
+El `.env` nunca se sube al repositorio.
 
-Todo pide sesión y responde JSON. Lo que modifica exige `Content-Type: application/json`.
+<br />
 
-| Método | Ruta | Para qué |
-|---|---|---|
-| `GET` | `/api/proyectos` | Lista los proyectos de la cuenta |
-| `POST` | `/api/proyectos` | Crea uno (`nombre`, `descripcion`, `estado`, `color`, `enlace`, `repo`) |
-| `PATCH` | `/api/proyectos/:id` | Cambia los campos que lleguen |
-| `DELETE` | `/api/proyectos/:id` | Lo elimina |
+## Scripts
 
-## El login es una copia de `Acmsy/shared/auth`, con dos cambios
+| Comando | Qué hace |
+|---|---|
+| `npm start` | Servidor en el puerto de `PORT` |
+| `npm run dev` | Igual, pero se reinicia al guardar |
+| `npm run sembrar -- correo` | Carga los proyectos iniciales en esa cuenta, sin duplicar los que ya estén |
 
-1. Las pantallas las pone la app (`createAuth({ views })`), para que tengan el diseño de Shipline.
-2. **Registrarse con un correo que ya existe falla siempre.** El módulo original le pone
-   contraseña a una cuenta que entró con Google sin comprobar que el correo sea de quien se
-   registra, y con eso cualquiera puede quedarse con esa cuenta. Para añadir contraseña a una
-   cuenta de Google se usa «Olvidé mi contraseña», que sí prueba que el correo es suyo.
+<br />
 
-## Publicar en acmsy
+## PWA, SEO y despliegue
 
-1. Crear la base: `POST /api/databases` con motor PostgreSQL y nombre `shipline`.
-2. Publicar la carpeta con subdominio `shipline`, puerto `3000`, `useAcmsyAuth: true` y las variables
-   `DATABASE_URL` (la de `db-shipline`) y `APP_URL=https://shipline.acmsy.com`.
-3. Agregar `https://shipline.acmsy.com/auth/google/callback` en el cliente «acmsy web» de Google.
-4. Comprobar `https://shipline.acmsy.com/health`, que `sw.js` y el manifiesto salgan con
-   `cf-cache-status: BYPASS`, y avisar a los buscadores (IndexNow y Search Console).
+- **Instalable** en Android, iOS y PC. El icono maskable va a sangre sobre el mismo fondo oscuro del manifiesto, así la pantalla de inicio muestra solo el logo.
+- **`sw.js` y el manifiesto nunca se cachean**, para que cada despliegue llegue de inmediato a las apps instaladas.
+- **Vista previa al compartir** con Open Graph y tarjeta grande de X; **datos estructurados** (`WebSite` y `WebApplication`), `robots.txt`, `sitemap.xml` y `llms.txt` para buscadores e IAs.
+- **Despliegue:** la imagen de Docker instala solo las dependencias de producción y sirve la app en el puerto 3000.
+
+```bash
+docker build -t shipline .
+docker run -p 3000:3000 --env-file .env shipline
+```
+
+<br />
+
+<div align="center">
+  <img src="public/icons/favicon.svg" alt="" width="28" />
+  <br />
+  <sub>Hecho por <b>Ander</b></sub>
+</div>
