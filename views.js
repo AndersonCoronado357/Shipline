@@ -271,7 +271,7 @@ ${ojoJs}
   function appPage({ user }) {
     const nombre = (user.name || '').trim();
     const inicial = (nombre || user.email || '?').trim().charAt(0).toUpperCase();
-    const saludo = nombre ? `Hola, ${nombre.split(/s+/)[0]}` : 'Hola de nuevo';
+    const saludo = nombre ? `Hola, ${nombre.split(/\s+/)[0]}` : 'Hola de nuevo';
     // Filas grises mientras llegan los proyectos.
     const esqueleto = `<div class="esqueleto" aria-hidden="true">${'<div class="esq"><i></i><i></i><i></i></div>'.repeat(7)}</div>`;
     const campoUrl = (id, etiqueta, placeholder, irLabel, icono) => `<label class="campo"><span class="etq">${etiqueta}</span><span class="con-ir"><input id="${id}" inputmode="url" autocomplete="off" spellcheck="false" placeholder="${placeholder}"><a class="ir" id="${id}-ir" target="_blank" rel="noopener noreferrer" aria-label="${irLabel}" title="${irLabel}" hidden>${icono}</a></span></label>`;
