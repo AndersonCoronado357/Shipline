@@ -2,7 +2,7 @@
   "name": "shipline",
   "version": "1.0.0",
   "private": true,
-  "description": "Shipline: lleva tus proyectos de la idea a publicados. Una app de acmsy.",
+  "description": "Shipline: lleva tus proyectos de la idea a publicados.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

@@ -1,6 +1,6 @@
 # Shipline
 
-> Shipline es una app web para llevar tus proyectos de la idea a publicados. Cada proyecto tiene nombre, idea, color, enlace y repositorio, y avanza por cuatro estaciones: idea, en desarrollo, terminado y publicado. Es una app de acmsy.
+> Shipline es una app web para llevar tus proyectos de la idea a publicados. Cada proyecto tiene nombre, idea, color, enlace y repositorio, y avanza por cuatro estaciones: idea, en desarrollo, terminado y publicado.
 
 ## Qué hace
 
